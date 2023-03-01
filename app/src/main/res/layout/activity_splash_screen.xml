@@ -63,7 +63,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:backgroundTint="@color/black"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/laugh" />
+        app:srcCompat="@drawable/memelogo2" />
 
 
 

@@ -16,7 +16,7 @@ public class SplashScreen extends AppCompatActivity {
         getSupportActionBar().hide();
 
 // going to next activity
-        final Intent intent= new Intent(SplashScreen.this,MainActivity.class);
+        final Intent intent= new Intent(this,MainActivity.class);
 
 
         new Handler().postDelayed(new Runnable() {
