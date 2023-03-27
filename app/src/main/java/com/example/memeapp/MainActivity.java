@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -36,12 +37,10 @@ import java.io.FileOutputStream;
 public class MainActivity extends AppCompatActivity {
     //    for view binding
     ActivityMainBinding binding;
-    //    private static final String TAG = "Swipe Position";
-//    private float x1,x2,y1,y2;
-//    private static int Min_Distance= 150;
-//    private GestureDetector gestureDetector;
+
     RelativeLayout relativeLayout;
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         actionBar.setBackgroundDrawable(colorDrawable);
 
 
-        // binding used and we can write findview by id
+        // binding used and we can write find view by id
 
         getMeme();
         binding.btnNext.setOnClickListener(new View.OnClickListener() {
@@ -115,8 +114,6 @@ public class MainActivity extends AppCompatActivity {
 
 //        create request que
         RequestQueue queue = Volley.newRequestQueue(this);
-
-
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
 
@@ -209,9 +206,8 @@ public class MainActivity extends AppCompatActivity {
         }
         imgMeme.draw(canvas);// provide getBitmap form view in this
         return returnBitmap;
-
     }
-    //show
+   //show alert dialog box
 
     @Override
     public void onBackPressed() {
